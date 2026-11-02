@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NPD CLUB — Capsule Collection ’26</title>
+<style>
+:root{
+  --navy:#000080; --black:#000; --white:#fff;
+  /* GANTI foto hero di sini, contoh: url("data:image/jpeg;base64,...") */
+  --hero: linear-gradient(180deg,#cfd8d6 0%,#b9c3be 35%,#8c9a86 60%,#5f6d57 100%);
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;height:100%}
+body{font-family:"Poppins","Helvetica Neue",Arial,sans-serif;background:var(--black);color:var(--white);display:flex;flex-direction:column;min-height:100vh}
+
+/* Banner merah */
+.promo{background:var(--navy);height:40px;overflow:hidden;position:relative;flex:none;padding-top:env(safe-area-inset-top,0px);height:calc(40px + env(safe-area-inset-top,0px))}
+.promo-track{display:flex;width:max-content;white-space:nowrap;line-height:40px;animation:geser 22s linear infinite}
+.promo-track span{padding:0 4rem;font-size:14px;font-weight:600;letter-spacing:.01em}
+@keyframes geser{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.promo-track{animation:none}}
+
+/* Hero */
+.hero{position:relative;flex:1;min-height:520px;background:var(--hero) center/cover no-repeat;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,0) 30%,rgba(0,0,0,.12))}
+/* Siluet sederhana pengganti foto */
+.hero .atap{position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(160deg,#9a8f80 0%,#b3a794 50%,#7a4a3d 100%);clip-path:polygon(0 35%,40% 0,100% 18%,100% 100%,0 100%)}
+.hero .model{position:absolute;left:50%;bottom:0;width:min(34vw,420px);height:92%;transform:translateX(-50%);background:linear-gradient(180deg,#1b1b1b,#0b0b0b);clip-path:polygon(18% 6%,36% 0,64% 0,82% 6%,100% 30%,88% 62%,78% 56%,76% 100%,24% 100%,22% 56%,12% 62%,0 30%)}
+
+/* Penanda area gambar (hapus class .tanda setelah gambar diganti) */
+.tanda{position:absolute;left:50%;bottom:0;width:min(34vw,420px);height:92%;transform:translateX(-50%);border:3px dashed #ffd400;z-index:3;display:flex;align-items:flex-start;justify-content:center;pointer-events:none}
+.tanda span{background:#ffd400;color:#000;font-size:12px;font-weight:700;padding:6px 10px;margin-top:130px;text-align:center;text-transform:uppercase}
+
+/* Navbar */
+nav{position:absolute;top:0;left:0;right:0;z-index:5;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:30px 16px;font-size:13px;text-transform:uppercase}
+nav a,nav button{color:inherit;text-decoration:none;background:none;border:0;font:inherit;text-transform:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+nav a:focus-visible,nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.kiri,.kanan{display:flex;align-items:center;gap:40px}
+.kanan{justify-content:flex-end;gap:26px}
+.logo{font-size:34px;font-weight:700;letter-spacing:.01em;text-transform:none}
+.logo i{font-style:normal;font-size:30px;margin-right:2px}
+.menu{position:relative}
+.menu:hover .drop,.menu:focus-within .drop{display:block}
+.drop{display:none;position:absolute;top:100%;left:-12px;min-width:180px;background:rgba(0,0,0,.85);padding:10px 0}
+.drop a{display:block;padding:9px 16px;font-size:12px}
+.drop a:hover{background:var(--navy)}
+.chev{width:12px;height:12px}
+.flag{width:18px;height:12px;background:linear-gradient(#e70011 50%,#fff 50%);border-radius:2px}
+.ikon{width:24px;height:24px}
+
+/* Footer */
+footer{background:var(--black);flex:none;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px));font-size:12px;color:#fff;text-transform:uppercase}
+
+/* Tombol chat */
+.chat{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));width:42px;height:42px;border-radius:12px;background:#fff;border:0;box-shadow:0 2px 8px rgba(0,0,0,.35);cursor:pointer}
+
+@media (max-width:820px){
+  nav{grid-template-columns:auto 1fr auto;padding:20px 12px}
+  .kiri a.shop{display:none}
+  .kiri{gap:16px}
+  .kanan{gap:14px}
+  .kanan .mata-uang span,.kanan .cart{display:none}
+  .logo{font-size:26px}
+  .model{width:60vw!important}
+}
+</style>
+</head>
+<body>
+
+<div class="promo" role="region" aria-label="Pengumuman">
+  <div class="promo-track" aria-live="off">
+    <!-- ====== TEKS BANNER: ganti 4x teks di bawah ini ====== -->
+    <span>NPD CLUB : CAPSULE COLLECTION ’26</span><span>NPD CLUB : CAPSULE COLLECTION ’26</span>
+    <span>NPD CLUB : CAPSULE COLLECTION ’26</span><span>NPD CLUB : CAPSULE COLLECTION ’26</span>
+  </div>
+</div>
+
+<main class="hero" aria-label="Koleksi utama">
+  <div class="atap"></div>
+  <!-- ====== GAMBAR TENGAH (BAJU): ganti di sini ======
+       Ganti div class="model" di bawah dengan <img src="foto-kamu.jpg" ...>
+       atau ubah background-nya di CSS (.hero .model). Hapus juga div class="tanda" kalau sudah selesai. -->
+  <div class="model" role="img" aria-label="Model memakai kaos hitam"></div>
+  <div class="tanda"><span>⬇ Ganti gambar baju di sini</span></div>
+
+  <nav aria-label="Navigasi utama">
+    <div class="kiri">
+      <div class="menu">
+        <button aria-haspopup="true">Brand
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="drop"><a href="#">Tentang Kami</a><a href="#">Lookbook</a><a href="#">Kolaborasi</a></div>
+      </div>
+      <div class="menu">
+        <button aria-haspopup="true">Collections
+          <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="drop"><a href="#">Capsule ’26</a><a href="#">Kaos</a><a href="#">Celana</a><a href="#">Aksesoris</a></div>
+      </div>
+      <a class="shop" href="#">Shop Now</a>
+    </div>
+
+    <a class="logo" href="#" aria-label="NPD CLUB beranda"><i>❃</i>NPD CLUB</a>
+
+    <div class="kanan">
+      <button class="mata-uang" aria-label="Mata uang IDR"><span class="flag"></span><span>IDR</span></button>
+      <button aria-label="Cari">
+        <svg class="ikon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l6 6"/></svg>
+      </button>
+      <a class="cart" href="#">Chart</a>
+      <a href="#">Log in</a>
+    </div>
+  </nav>
+</main>
+
+<footer>Copyrights © 2026 NPD CLUB Limited - All Rights Reserved</footer>
+<button class="chat" aria-label="Buka chat"></button>
+
+</body>
+</html>
